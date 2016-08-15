@@ -1,0 +1,102 @@
+<div class="container topMargin">
+    <div class="row  pad-top">
+        <div class="col-sm-3 col-md-6 col-lg-6">
+            <div class="panel panel-default"  class="text-center">
+                <div class="panel-heading">
+                    <strong>Login</strong>
+                </div>
+                <div class="panel-body">
+                    <form name="userForm" ng-submit="userForm.$setPristine(); loginVm.login()" novalidate>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="username" name="username" placeholder="Username" ng-model="loginVm.checkUser.username" required minlength="4">
+                            <div ng-messages="userForm.username.$error" ng-if="userForm.username.$dirty">
+                                <p ng-message="required" class="error">Username is required</p>
+                                <p ng-message="minlength" class="error">Username must have a length greater than 4</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="userpassword" name="userpassword" placeholder="Password" ng-model="loginVm.checkUser.password" required minlength="8">
+                            <div ng-messages="userForm.userpassword.$error" ng-if="userForm.userpassword.$dirty">
+                                <p ng-message="required" class="error">Password is required</p>
+                                <p ng-message="minlength" class="error">Password must have a length greater than 8</p>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-9 col-md-6 col-lg-6">
+            <div class="panel panel-default" class="text-center">
+                <div class="panel-heading">
+                    <strong>Not a User? Register Here!</strong>
+                </div>
+                <div class="panel-body">
+                    <form name="signupForm" ng-submit="signupForm.$setPristine(); loginVm.addUser()" novalidate>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" ng-model="loginVm.newUser.user.firstName" required minlength="4">
+                            <div ng-messages="signupForm.firstName.$error" ng-if="signupForm.firstName.$dirty">
+                                <p ng-message="required" class="error">First Name is required</p>
+                                <p ng-message="minlength" class="error">First Name has to be at least 4 chars</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name" ng-model="loginVm.newUser.user.lastName" required minlength="4">
+                            <div ng-messages="signupForm.lastName.$error" ng-if="signupForm.lastName.$dirty">
+                                <p ng-message="required" class="error">Last Name is required</p>
+                                <p ng-message="minlength" class="error">Last Name has to be at least 4 chars</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="emailid" name="emailid" placeholder="Email" ng-model="loginVm.newUser.user.email" required>
+                            <div ng-messages="signupForm.emailid.$error" ng-if="signupForm.emailid.$dirty">
+                                <p ng-message="required" class="error">Email is required</p>
+                                <p ng-message="email" class="error">Email is invalid</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="city" name="city" placeholder="City" ng-model="loginVm.newUser.user.city" required>
+                            <div ng-messages="signupForm.city.$error" ng-if="signupForm.city.$dirty">
+                                <p ng-message="required" class="error">City is required</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="state" name="state" placeholder="State" ng-model="loginVm.newUser.user.state" required>
+                            <div ng-messages="signupForm.state.$error" ng-if="signupForm.state.$dirty">
+                                <p ng-message="required" class="error">State is required</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" class="form-control" id="zip" name="zip" placeholder="Zip" ng-model="loginVm.newUser.user.zip" required>
+                            <div ng-messages="signupForm.zip.$error" ng-if="signupForm.zip.$dirty">
+                                <p ng-message="required" class="error">Zip is required</p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="user" name="user" placeholder="Username" ng-model="loginVm.newUser.username" required minlength="4">
+                            <div ng-messages="signupForm.user.$error" ng-if="signupForm.user.$dirty">
+                                <p ng-message="required" class="error">Username is required</p>
+                                <p ng-message="minlength" class="error">Username has to be at least 4 chars</p>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="pass" name="pass" placeholder="Password" ng-model="loginVm.newUser.password" required minlength="8">
+                            <div ng-messages="signupForm.pass.$error" ng-if="signupForm.pass.$dirty">
+                                <p ng-message="required" class="error">Password is required</p>
+                                <p ng-message="minlength" class="error">Password has to be at least 8 chars</p>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary" ng-disabled="signupForm.$invalid">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="container">
+    &copy;2015 | Egen
+</footer>

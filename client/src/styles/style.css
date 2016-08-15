@@ -1,0 +1,21 @@
+/* Styles go here */
+.topMargin {
+    margin:auto;
+    margin-top:20px;
+    width: 70%;
+}
+.poster-pic {
+    width: 60px;
+    height: 60px;
+}
+.error {
+    color: red;
+    margin: 0;
+}
+section {
+    margin: 40px 0;
+    min-height: 400px;
+}
+#header1{
+    color:white;
+}

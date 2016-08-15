@@ -1,0 +1,52 @@
+<div class="container topMargin">
+    <form name="form1" ng-submit="ratingVm.getRating()">
+        <button type="submit" class="btn btn-primary">Check your rating.</button>
+    </form>
+    <div ng-show="ratingVm.hideParam" class="panel panel-default"  class="text-center">
+        <div class="panel-heading">
+            <strong>Rating</strong>
+        </div>
+        <div class="panel-body">
+            <form name="userForm" ng-submit="userForm.$setPristine(); ratingVm.rate()" novalidate>
+                <div class="form-group">
+                    <input type="number" class="form-control" id="rating" name="rating" placeholder="Ratings" ng-model="ratingVm.rating.userRating" required min="0" max="5">
+                    <div ng-messages="userForm.rating.$error" ng-if="userForm.rating.$dirty">
+                        <p ng-message="required" class="error">Rating is required</p>
+                        <p ng-message="min" class="error">Rating cannot be less than 0</p>
+                        <p ng-message="max" class="error">Rating cannot be more than 5</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="comment" name="comment" placeholder="Comment" ng-model="ratingVm.rating.comment">
+                </div>
+                <button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid">Rate!</button>
+            </form>
+        </div>
+    </div>
+    <div ng-hide="ratingVm.showParam" class="panel panel-default"  class="text-center">
+        <p>Already rated!</p>
+    </div>
+</div>
+<footer class="container">
+    <div class="row">
+        <div class = "col-lg-8">
+            &copy;2015 | Egen
+        </div>
+        <div class = "col-lg-4">
+            <table style="float:right">
+                <tr>
+                    <td>
+                        <form name="backForm1" ng-submit="ratingVm.logout()">
+                            <button type="submit" class="btn btn-primary">Logout</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form name="backForm2" ng-submit="ratingVm.movielist()">
+                            <button type="submit" class="btn btn-primary">Movie list</button>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</footer>

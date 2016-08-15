@@ -1,0 +1,38 @@
+<div class = "container topMargin">
+    <div class="row">
+        <div class="col-lg-4"><input type="text" class="form-control" placeholder="Search For Title..." ng-model="movieListVm.searchTitle"></div>
+        <div class="col-lg-4"><input type="text" class="form-control" placeholder="Search For Genre..." ng-model="movieListVm.searchGenre"></div>
+        <div class="col-lg-4"><input type="text" class="form-control" placeholder="Search For Year...." ng-model="movieListVm.searchYear"></div>
+    </div>
+    <br>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th ng-click="movieListVm.sorter.sortBy='title'; movieListVm.sorter.sortOrder = !movieListVm.sorter.sortOrder;">Movies</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="movie in movieListVm.movies | filter:{genre: {name: movieListVm.searchGenre}, title:movieListVm.searchTitle, year:movieListVm.searchYear} | orderBy:movieListVm.sorter.sortBy: movieListVm.sorter.sortOrder">
+            <td>
+                <a ng-href="#/movie-detail/{{movie.id}}"><img class="poster-pic" ng-src="{{movie.poster}}" /></a>
+            </td>
+            <td>{{movie.title}}</td>
+            <td>
+                <a ng-href="#/rating/{{movie.id}}">Rate this</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<footer class="container">
+    <div class="row">
+        <div class = "col-lg-8">
+            &copy;2015 | Egen
+        </div>
+        <div class = "col-lg-4">
+            <form name="backForm1" ng-submit="movieListVm.logout()" style="float:right">
+                <button type="submit" class="btn btn-primary">Logout</button>
+            </form>
+        </div>
+    </div>
+</footer>

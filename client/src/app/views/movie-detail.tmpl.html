@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col-lg-8">
+        <h1>{{movieVm.movie.title}}</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-8">
+        <p><strong>Year</strong>: {{movieVm.movie.year}}</p>
+        <p><strong>Rated</strong>: {{movieVm.movie.rated}}</p>
+        <p><strong>Release Date</strong>: {{movieVm.movie.released}}</p>
+        <p><strong>Runtime</strong>: {{movieVm.movie.runtime}}</p>
+        <p><strong>Genre</strong>: <ul ng-repeat="gnr in movieVm.movie.genre"><li>{{gnr.name}}</li></ul>
+
+        <p><strong>Cast</strong>: <ul ng-repeat="cast in movieVm.movie.castMembers"><li>{{cast.name}}, {{cast.role}}</li></ul>
+        <p><strong>Countries</strong>: <ul ng-repeat="country in movieVm.movie.countries"><li>{{country.name}}</li></ul>
+        <p><strong>Languages</strong>: <ul ng-repeat="language in movieVm.movie.languages"><li>{{language.name}}</li></ul>
+
+        <p><strong>Plot</strong>: {{movieVm.movie.plot}}</p>
+        <p><strong>Awards</strong>: {{movieVm.movie.awards}}</p>
+        <p><strong>Type</strong>: {{movieVm.movie.type}}</p>
+    </div>
+    <div class="col-sm-4">
+        <img class="img-responsive" ng-src="{{movieVm.movie.poster}}">
+        <a ng-href="http://www.imdb.com/title/{{movieVm.movie.imdbId}}">Go to the IMDb page</a>
+    </div>
+</div>
+
+<footer class="container">
+    <div class="row">
+        <div class = "col-lg-8">
+            &copy;2015 | Egen
+        </div>
+        <div class = "col-lg-4">
+            <table style="float:right">
+                <tr>
+                    <td>
+                        <form name="backForm1" ng-submit="movieVm.logout()">
+                            <button type="submit" class="btn btn-primary">Logout</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form name="backForm2" ng-submit="movieVm.movielist()">
+                            <button type="submit" class="btn btn-primary">Movie list</button>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</footer>

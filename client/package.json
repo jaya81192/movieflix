@@ -1,0 +1,14 @@
+{
+  "name": "ui-example",
+  "version": "1.0.0",
+  "description": "ui example project to understand gulp, npm, bower",
+  "author": "jsureshk",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.14.0",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-inject": "^4.1.0",
+    "main-bower-files": "^2.13.1"
+  }
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="movieflix">
+<head>
+
+    <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
+    <!-- endinject -->
+
+    <!-- vendor:css -->
+    <!-- endinject -->
+
+    <!-- inject:css -->
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- endinject -->
+
+    <!-- app:css -->
+    <!-- endinject -->
+
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <form class="form-inline" role="form">
+            <div class="nav navbar-nav navbar-left">
+                <h3 id="header1"><strong>Movieflix</strong></h3>
+            </div>
+        </form>
+    </div>
+</nav>
+<br>
+<section class="container" ng-view>
+</section>
+
+<!-- bower:js -->
+<script src="/bower_components/angular/angular.js"></script>
+<script src="/bower_components/jquery/dist/jquery.js"></script>
+<script src="/bower_components/angular-route/angular-route.js"></script>
+<script src="/bower_components/angular-messages/angular-messages.js"></script>
+<script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<!-- endinject -->
+
+
+<!-- vendor:js -->
+<!-- endinject -->
+
+
+<!-- inject:js -->
+<script src="app/movieflix-module.js"></script>
+<script src="app/controllers/login-signup.controller.js"></script>
+<script src="app/controllers/movie-detail.controller.js"></script>
+<script src="app/controllers/movie-list.controller.js"></script>
+<script src="app/controllers/rating.controller.js"></script>
+<script src="app/services/movie.service.js"></script>
+<script src="app/services/rating.service.js"></script>
+<script src="app/services/user.service.js"></script>
+<!-- endinject -->
+
+
+<!-- app:js -->
+<!-- endinject -->
+
+</body>
+</html>
