@@ -32,17 +32,14 @@
             ratingService
                 .getRating(userglobalid,$routeParams.id)
                 .then(function (data) {
-                    if(data.length === 1){
-                        ratingVm.hideParam = false;
-                        ratingVm.showParam = false;
-                    }
-                    else{
-                        ratingVm.hideParam = true;
-                        ratingVm.showParam = true;
-                    }
+                    ratingVm.foundData = data;
+                    ratingVm.hideParam = false;
+                    ratingVm.showParam = false;
                 },
                 function (error) {
-                    console.log(error);
+                    ratingVm.hideParam = true;
+                    ratingVm.showParam = true;
+
                 });
         }
 
@@ -55,12 +52,13 @@
             ratingVm.rating.movie = movie;
             console.log(ratingVm.rating);
             JSON.stringify(ratingVm.rating)
+
             addRating();
         }
 
         function addRating() {
             ratingService
-                .createRating(ratingVm.userRating)
+                .createRating(ratingVm.rating)
                 .then(function(data) {
                     $location.path('/movie-list');
                 }, function(error) {
