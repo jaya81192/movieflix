@@ -53,8 +53,8 @@
             movie.id = $routeParams.id;
             ratingVm.rating.user = user;
             ratingVm.rating.movie = movie;
-            JSON.stringify(ratingVm.rating);
             console.log(ratingVm.rating);
+            JSON.stringify(ratingVm.rating)
             addRating();
         }
 

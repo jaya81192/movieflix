@@ -19,3 +19,15 @@ section {
 #header1{
     color:white;
 }
+body{
+    background: url("../images/bg.jpg");
+}
+table{
+    background-color: white;
+}
+.ref1{
+    color: darkred;
+}
+.floatRight{
+    float:right;
+}
